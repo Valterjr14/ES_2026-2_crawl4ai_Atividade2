@@ -62,9 +62,9 @@ Essa abordagem funciona adequadamente para projetos pequenos e médios, porém p
 
 | Critério | Avaliação |
 |-----------|-----------|
-| Probabilidade | Alta |
+| Probabilidade | Média/Alta |
 | Impacto | Médio |
-| Nível de Risco | Médio-Alto |
+| Nível de Risco | Médio |
 
 ---
 
