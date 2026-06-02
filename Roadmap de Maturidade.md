@@ -40,8 +40,6 @@ Antes de propor as ações, é necessário situar o estado atual do projeto em r
 - **Responsável** designado para cada milestone.
 Esta ação corresponde diretamente ao atributo de processo **AP 1.1 (O processo é executado)** e **AP 2.1 (O processo é gerenciado)** do MPS.BR, que exigem que o trabalho seja planejado e monitorado contra um plano.
  
-![Milestone com data e issues](./imagens/milestone-estruturada.png)
- 
 ---
  
 ### Ação 2 — Implementar um Quadro de Acompanhamento com GitHub Projects
@@ -69,26 +67,33 @@ O único indício de gestão de riscos encontrado está na própria evolução d
  
 **Classificação de risco:** Médio — o conhecimento sobre riscos está concentrado no mantenedor principal, criando dependência de pessoas e dificultando a continuidade do projeto em caso de rotatividade de contribuidores.
  
-**Ação proposta:** Criar dois artefatos complementares no repositório:
- 
-1. **`ESTIMATES.md`** — Documento com as estimativas de esforço (em story points ou horas) para as funcionalidades planejadas no ROADMAP, atualizado a cada ciclo de release. Pode ser mantido de forma simplificada, compatível com a natureza open-source do projeto.
-2. **`RISK_REGISTER.md`** — Registro formal de riscos, contendo para cada risco identificado:
-   - **Descrição** do risco.
-   - **Probabilidade** (Alta / Média / Baixa).
-   - **Impacto** (Alto / Médio / Baixo).
-   - **Estratégia de mitigação** (já aplicada ou proposta).
-   - **Responsável pelo monitoramento**.
-   Exemplos de riscos já identificados na análise:
-   | Risco | Probabilidade | Impacto | Mitigação Existente |
-   |-------|--------------|---------|---------------------|
-   | Mudança de API de LLM (OpenAI, Anthropic) | Alta | Alto | Abstração via `LLMConfig` |
-   | Bloqueio por sistemas anti-bot | Alta | Alto | Mecanismos de fallback (v0.8.5) |
-   | Vulnerabilidades de segurança no Docker API | Média | Crítico | Hooks desabilitados por padrão (v0.8.0) |
-   | RCE via escape de sandbox no `eval()` — CVSS 9.8 (CWE-94) | Alta | Crítico | Corrigido na v0.8.7 após reporte externo |
-   | Forja de tokens JWT via chave padrão `"mysecret"` — CVSS 9.8 (CWE-798) | Alta | Crítico | Corrigido na v0.8.7 após reporte externo |
-   | SSRF via URLs de webhook e endpoints de crawl — CVSS 8.6 (CWE-918) | Média | Alto | Corrigido na v0.8.7 após reporte externo |
-   | Dependência de mantenedor único | Média | Alto | Sem mitigação formal registrada |
-Esta ação atende diretamente aos resultados esperados **GPR 2** (estimativas do projeto são estabelecidas e mantidas) e **GPR 5** (riscos do projeto são identificados, analisados e tratados) do MPS.BR Nível G.
+**Criação de artefatos para estimativas e gerenciamento de riscos**
+
+Outra melhoria recomendada consiste na criação de dois artefatos simples, porém alinhados às práticas de gerenciamento de projetos do MPS.BR:
+
+1. **ESTIMATES.md** — Documento destinado ao registro das estimativas de esforço das funcionalidades previstas no ROADMAP, utilizando métricas como horas de trabalho ou story points. O documento deve ser atualizado a cada ciclo de desenvolvimento ou release, mantendo um histórico básico de planejamento compatível com a dinâmica de projetos open-source.
+
+2. **RISK_REGISTER.md** — Documento para o registro e acompanhamento dos principais riscos do projeto. Para cada risco identificado, recomenda-se registrar:
+
+   * Descrição do risco;
+   * Probabilidade de ocorrência (Alta, Média ou Baixa);
+   * Impacto potencial (Alto, Médio ou Baixo);
+   * Estratégia de mitigação adotada ou planejada;
+   * Responsável pelo monitoramento.
+
+Com base na análise realizada, alguns riscos já poderiam ser registrados inicialmente, conforme apresentado na Tabela X.
+
+| Risco                                                                                 | Probabilidade | Impacto | Estratégia de Mitigação                                           |
+| ------------------------------------------------------------------------------------- | ------------- | ------- | ----------------------------------------------------------------- |
+| Mudanças nas APIs de provedores de LLM (OpenAI, Anthropic, entre outros)              | Alta          | Alto    | Camada de abstração implementada por meio da classe `LLMConfig`   |
+| Bloqueios por mecanismos anti-bot de sites monitorados                                | Alta          | Alto    | Utilização de mecanismos de fallback introduzidos na versão 0.8.5 |
+| Vulnerabilidades de segurança relacionadas à Docker API                               | Média         | Crítico | Hooks desabilitados por padrão desde a versão 0.8.0               |
+| Execução remota de código (RCE) por escape de sandbox em `eval()` (CVSS 9.8 – CWE-94) | Alta          | Crítico | Vulnerabilidade corrigida na versão 0.8.7 após reporte externo    |
+| Forja de tokens JWT devido ao uso da chave padrão `"mysecret"` (CVSS 9.8 – CWE-798)   | Alta          | Crítico | Vulnerabilidade corrigida na versão 0.8.7 após reporte externo    |
+| SSRF por URLs de webhook e endpoints de rastreamento (CVSS 8.6 – CWE-918)             | Média         | Alto    | Vulnerabilidade corrigida na versão 0.8.7 após reporte externo    |
+| Dependência excessiva de um único mantenedor                                          | Média         | Alto    | Não há mitigação formalmente documentada                          |
+
+A adoção desses artefatos contribuiria para institucionalizar práticas de planejamento e gerenciamento de riscos no projeto, atendendo diretamente aos resultados esperados **GPR 2** (as estimativas do projeto são estabelecidas e mantidas) e **GPR 5** (os riscos do projeto são identificados, analisados e tratados) do **MPS.BR Nível G**.
  
 ---
  
