@@ -262,3 +262,7 @@ A auditoria identificou que o Crawl4AI possui uma arquitetura moderna e flexíve
 Como plano de resgate técnico, foi proposta a aplicação do padrão **Factory Method**, permitindo centralizar a criação dos provedores e reduzir o acoplamento entre os módulos do sistema.
 
 A adoção dessa solução contribuiria para maior escalabilidade, facilidade de manutenção e melhor aderência aos princípios **SOLID** e aos padrões **GoF**.
+
+## Ferramentas de IA Utilizadas
+
+Para a elaboração desta seção foi utilizado o ChatGPT (OpenAI) como ferramenta de apoio na análise das evidências do repositório Crawl4AI, na organização das informações coletadas e na estruturação da proposta de refatoração conceitual apresentada neste relatório.
