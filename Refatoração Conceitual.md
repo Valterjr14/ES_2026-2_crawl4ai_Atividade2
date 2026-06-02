@@ -72,7 +72,7 @@ Essa abordagem funciona adequadamente para projetos pequenos e médios, porém p
 
 ### Princípio D – Dependency Inversion Principle (SOLID)
 
-Os módulos de alto nível ainda possuem conhecimento indireto das implementações concretas dos provedores de IA.
+Os módulos de alto nível ainda possuem conhecimento indireto das implementações concretas dos provedores de IA. Embora o Crawl4AI utilize uma arquitetura flexível para integração com múltiplos provedores de IA, a seleção do modelo ocorre por meio de identificadores textuais específicos, fazendo com que componentes de configuração dependam de detalhes concretos dos provedores. Essa característica representa uma aderência parcial ao Dependency Inversion Principle (DIP), uma vez que a abstração ainda depende do conhecimento de implementações específicas. 
 
 Em vez de depender apenas de abstrações, partes do sistema precisam conhecer identificadores específicos como:
 
