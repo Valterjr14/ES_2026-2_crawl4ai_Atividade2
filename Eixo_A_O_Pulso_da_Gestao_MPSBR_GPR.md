@@ -185,7 +185,7 @@ O risco geral foi classificado como médio, pois não representa uma falha imedi
 
 #### Evidência 1 — Gráfico de commits do último ano
 
-![Gráfico de commits do último ano](grafico-commits.png)
+![Gráfico de commits do último ano](./imagens/grafico-commits.png)
 
 #### Diagnóstico
 
