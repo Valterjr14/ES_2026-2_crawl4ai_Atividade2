@@ -14,7 +14,8 @@ Foi realizada uma busca sistemática pelas ocorrências da biblioteca `litellm` 
 | `legacy\llmtxt.py` | 3 linhas | Código legado (pasta legacy) |
 | `utils.py` | 12 linhas | Centraliza lógica de completion e embeddings |
 
-**Evidência:** `Captura de Tela (1).png`
+**Evidência:** 
+![Captura de tela 1](./imagens/CapturaTela1.png)
 
 ### 1.2 Análise Crítica
 
@@ -40,7 +41,9 @@ A análise de tamanho revelou uma concentração crítica de lógica em poucos a
 | 🥈 2º | `async_crawler_strategy.py` | **121.105** | 🔴 Alto |
 | 🥉 3º | `extraction_strategy.py` | **120.722** | 🔴 Alto |
 
-**Evidência:** `Captura de Tela (3).png`
+**Evidência:** 
+![Captura de Tela 3](./imagens/CapturaTela3.png)
+![Captura de Tela 3.1](./imagens/CapturaTela3-1.png)
 
 ### 2.2 Análise Crítica
 
@@ -67,7 +70,8 @@ Busca por padrões de tratamento de `TimeoutError` em todo o projeto.
 | `browser_manager.py` | 2 | subprocess, asyncio |
 | `cache_validator.py` | 1 | httpx |
 
-**Evidência:** `Captura de Tela (5).png`
+**Evidência:** 
+![Captura de Tela 5](./imagens/CapturaTela5.png)
 
 ### 3.2 Análise Crítica
 
